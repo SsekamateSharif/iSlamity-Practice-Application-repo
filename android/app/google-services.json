@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1096735216294",
+    "project_id": "islamity-flutter-project",
+    "storage_bucket": "islamity-flutter-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1096735216294:android:0e3afaf3820c31748f5a67",
+        "android_client_info": {
+          "package_name": "com.sharif.islamity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGhu5SF_NVQoaOXGVbEz6vfCpLYTdYtVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

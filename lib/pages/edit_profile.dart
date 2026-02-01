@@ -1,0 +1,98 @@
+import 'package:flutter/material.dart';
+import 'package:islamity/components/app_text_field.dart';
+import 'package:islamity/components/toolbar.dart';
+
+class EditProfilePage extends StatelessWidget {
+  const EditProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue[900],
+      appBar: Toolbar(title: "Edit Profile"),
+      body:SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+                Stack(
+                children: [
+                  Container(
+                    width: 180,
+                    color: Colors.red[500],
+                    height: 180,
+                    
+                  ),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.all(4),
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.all(Radius.circular(6),
+                        ),
+                        
+        
+                      ),
+                      child: Icon(
+                        Icons.edit,
+                        size: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                    
+                    ),
+                    
+                ],
+              ),
+              SizedBox(height: 30),
+              AppTextField(hint: 'First Name'),
+              SizedBox(height: 10),
+              AppTextField(hint: 'Last Name'),
+              SizedBox(height: 10),
+              AppTextField(hint: 'Phone Number'),
+              SizedBox(height: 10),
+              AppTextField(hint: 'Location'),
+              SizedBox(height: 50),
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Changes are made successfully',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  foregroundColor: Colors.black,
+                  minimumSize: Size(200, 50),
+                ),
+                child: Text("Apply Changes", style: TextStyle(fontSize: 16)),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  foregroundColor: Colors.black,
+                  minimumSize: Size(100, 50),
+                ),
+                child: Text("Back", style: TextStyle(fontSize: 16)),
+              ),
+          
+            ],
+          ),
+        
+        ),
+      ),
+    );
+  }
+}
