@@ -76,7 +76,7 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Colors.blue[800],
       body: Column(
         children: [
           SizedBox(height: 63),

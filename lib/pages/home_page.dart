@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
           );
         },
       ),
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Colors.blue[800],
     );
   }
 

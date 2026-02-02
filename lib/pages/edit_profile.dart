@@ -2,27 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:islamity/components/app_text_field.dart';
 import 'package:islamity/components/toolbar.dart';
 
-class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+enum Gender {
+  // create an enum for the genders to be used
+  none,
+  male,
+  female,
+  other,
+  undisclosed,
+}
+
+class EditProfilePage extends StatefulWidget {
+  EditProfilePage({super.key});
+
+  @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  var gender = Gender.none;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[900],
+      backgroundColor: Colors.blue[800],
       appBar: Toolbar(title: "Edit Profile"),
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-                Stack(
+              Stack(
                 children: [
-                  Container(
-                    width: 180,
-                    color: Colors.red[500],
-                    height: 180,
-                    
-                  ),
+                  Container(width: 180, color: Colors.red[500], height: 180),
                   Positioned(
                     bottom: 0,
                     right: 0,
@@ -30,20 +41,11 @@ class EditProfilePage extends StatelessWidget {
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         color: Colors.yellow,
-                        borderRadius: BorderRadius.all(Radius.circular(6),
-                        ),
-                        
-        
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
-                      child: Icon(
-                        Icons.edit,
-                        size: 20,
-                        color: Colors.black,
-                      ),
+                      child: Icon(Icons.edit, size: 20, color: Colors.black),
                     ),
-                    
-                    ),
-                    
+                  ),
                 ],
               ),
               SizedBox(height: 30),
@@ -87,10 +89,52 @@ class EditProfilePage extends StatelessWidget {
                 ),
                 child: Text("Back", style: TextStyle(fontSize: 16)),
               ),
-          
+              RadioListTile(
+                title: Text('Female', 
+                style: TextStyle(fontWeight: FontWeight.bold),),
+                value: Gender.female,
+                groupValue: gender,
+                onChanged: (value) {
+                  setState(() {
+                    gender = Gender.female;
+                  });
+                },
+              ),
+              RadioListTile(
+                title: Text('Male',
+                style: TextStyle(fontWeight: FontWeight.bold),),
+                value: Gender.male,
+                groupValue: gender,
+                onChanged: (value) {
+                  setState(() {
+                    gender = Gender.male;
+                  });
+                },
+              ),
+              RadioListTile(
+                title: Text('Other',
+                style: TextStyle(fontWeight: FontWeight.bold),),
+                value: Gender.other,
+                groupValue: gender,
+                onChanged: (value) {
+                  setState(() {
+                    gender = Gender.other;
+                  });
+                },
+              ),
+              RadioListTile(
+                title: Text('Undisclosed',
+                style: TextStyle(fontWeight: FontWeight.bold),),
+                value: Gender.undisclosed,
+                groupValue: gender,
+                onChanged: (value) {
+                  setState(() {
+                    gender = Gender.undisclosed;
+                  });
+                },
+              ),
             ],
           ),
-        
         ),
       ),
     );
