@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        backgroundColor: Colors.amber[400],
+        backgroundColor: Colors.green[600],
       ),
     );
   }

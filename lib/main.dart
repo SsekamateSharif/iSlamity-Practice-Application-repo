@@ -3,6 +3,7 @@ import 'package:islamity/pages/edit_profile.dart';
 import 'package:islamity/pages/home_page.dart';
 import 'package:islamity/pages/login_page.dart';
 import 'package:islamity/pages/main_page.dart';
+import 'package:islamity/pages/nearby_page.dart';
 import 'package:islamity/pages/profile_page.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/main_page':(context) => MainPage(),
         '/edit_profile':(context) => EditProfilePage(),
-        'profile_page': (context) => ProfilePage(),
+        '/profile_page': (context) => ProfilePage(),
+        '/nearby_page': (context) => NearbyPage(),
       }
       );
   }

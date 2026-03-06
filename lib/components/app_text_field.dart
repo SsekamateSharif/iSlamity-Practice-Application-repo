@@ -9,11 +9,18 @@ class AppTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hint,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12)),
-          borderSide: const BorderSide(color: Colors.grey,
+        labelText: hint,
+        labelStyle: TextStyle(
+          color: Colors.white,
+        ),
+        border: const UnderlineInputBorder(
+        
+          borderRadius: BorderRadius.all(Radius.circular(12)),     
+        ),
+        focusedBorder: const UnderlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)), 
+          borderSide: const BorderSide(color: Colors.transparent,
           width: 1.5),
-          
         ),
         filled: true,
         fillColor: Colors.white.withOpacity(0.5),

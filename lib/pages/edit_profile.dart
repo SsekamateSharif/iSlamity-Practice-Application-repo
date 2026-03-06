@@ -33,7 +33,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
             children: [
               Stack(
                 children: [
-                  Container(width: 180, color: Colors.red[500], height: 180),
+                  Container(
+                    padding: const EdgeInsets.only(left: 12 , right: 12,top:6),
+                    width: 180, color: Colors.red[500], height: 180),
                   Positioned(
                     bottom: 0,
                     right: 0,

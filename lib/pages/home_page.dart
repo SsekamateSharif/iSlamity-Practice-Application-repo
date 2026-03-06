@@ -11,27 +11,33 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: Toolbar(
         title: "iSlamity",
-        actions: [Icon(Icons.location_on_outlined),
-        IconButton(
-          icon: const Icon(Icons.search),
-          tooltip: "searching",
-          onPressed: (){}, ),
-        IconButton(
-          icon: const Icon(Icons.camera),
-          tooltip: "Camera",
-          onPressed: (){},
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.location_on_outlined),
+            tooltip: "Location",
+            onPressed: () {
+              Navigator.of(context).pushNamed('/nearby_page');
+            },
           ),
-          ],
-        ),
+          IconButton(
+            icon: const Icon(Icons.search),
+            tooltip: "searching",
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.camera),
+            tooltip: "Camera",
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: ListView.separated(
         itemBuilder: (context, index) {
           return PostItems(user: users[index]);
         },
         itemCount: users.length,
         separatorBuilder: (context, index) {
-          return SizedBox(
-            height: 24,
-          );
+          return SizedBox(height: 24);
         },
       ),
       backgroundColor: Colors.blue[800],
